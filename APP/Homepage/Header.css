@@ -1,3 +1,10 @@
+.page-transiton{
+  transition: opacity 0.3s ease;
+}
+.page-hidden{
+  opacity: 0;
+}
+
 .top-nav{
   background-color: #fff;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -11,6 +18,15 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 0;
+}
+
+.nav-links a{
+  color:#333;
+  
+}
+
+.nav-links a:hover{
+  color: #2dd584;
 }
 
 .top-left{
@@ -48,6 +64,7 @@
   font-size:12px;
   padding: 8px 0;
   position: relative;
+  transition: color 0.2s;
 }
 
 .top-right{
@@ -98,4 +115,51 @@
 
 .open-vip{
   font-size: 12px;
+}
+
+.sub-nav{
+  background: #fff;
+  border-bottom: 1px solid #e1e1e2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sub-nav .nav-container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.sub-nav-links{
+  display:flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sub-nav-links li{
+  position: relative;
+  padding: 10px 20px;
+  font-size: 10px;
+}
+
+.sub-nav-links a{
+  color:#333;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.sub-nav-links a:hover,
+.sub-nav-links .active{
+  color: #2dd584;
+}
+
+.sub-nav-links .active::after{
+  position: absolute;
+  bottom:0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #2dd584;
 }
