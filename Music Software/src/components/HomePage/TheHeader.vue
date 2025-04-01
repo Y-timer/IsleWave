@@ -1,4 +1,33 @@
-<script setup>
+<script>
+export default {
+  name:"TheHeader",
+  data(){
+    return {
+      isLoggedIn: false,
+    }
+  },
+  computed:{
+    loginText(){
+      return this.isLoggedIn ? "已登录" : "登录"
+    }
+  },
+  mounted(){
+    this.checkLoginStatus()
+  },
+  methods:{
+    checkLoginStatus() {
+      this.isLoggedIn = !!localStorage.getItem('musicLoggedIn')
+    },
+    handleLogin() {
+      if (!this.isLoggedIn) {
+        document.body.classList.add("page-hidden");
+        setTimeout(() => {
+          this.$router.push('/login'); // 使用 Vue Router
+        }, 300);
+      }
+    }
+  }
+}
 
 </script>
 
@@ -20,7 +49,8 @@
         <input type="search" placeholder="搜索音乐、MV、歌单、用户">
         <button class="search-button">Q</button>
       </div>
-      <a href="#" class="login">登录</a>
+      <a href="#" :class="['login', { 'no-click': isLoggedIn }]"
+      @click.prevent="handleLogin">{{ loginText}}</a>
       <span class="open-vip">开通VIP</span>
       <button class="recharge">充值</button>
     </div>
@@ -66,7 +96,7 @@
 }
 
 .logo{
-  color: #20201e;
+  color:#2dd584;
   font-size: 20px;
   margin: 0;
   line-height: 1;
