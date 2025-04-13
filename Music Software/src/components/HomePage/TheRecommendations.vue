@@ -1,13 +1,44 @@
 <script>
 export default{
-  name:"TheBody"
+  name:"TheRecommendations",
+  data(){
+    return {
+      playlists:[
+        {
+          imageUrl:"/pic1.jpg",
+          title:"你的能量助力曲",
+          playCount:"888万"
+        },
+        {
+          imageUrl:"/pic2.jpg",
+          title:"经典怀旧金曲",
+          playCount:"2452万"
+        },
+        {
+          imageUrl:"/pic3.jpg",
+          title:"轻音乐",
+          playCount:"121万"
+        },
+        {
+          imageUrl:"/pic4.jpg",
+          title:"深夜助眠钢琴曲",
+          playCount:"672万"
+        },
+        {
+          imageUrl:"/pic7.jpg",
+          title:"写作业必听",
+          playCount:"8886万"
+        },
+      ]
+    }
+  }
 }
 </script>
 
 <template>
   <nav class="the-body">
     <div class="body-top">
-      <h1 class="body-name">歌单推荐</h1>
+      <h1 class="the-title">歌单推荐</h1>
     </div>
     <div class="body-container">
       <ul class="body-links">
@@ -24,19 +55,22 @@ export default{
         <!-- 重复5个列表项 -->
         <li 
           class="image-item"
-          v-for="(item, index) in 5"
-          :key="index"
+          v-for="(item, index) in playlists"
+          v-bind:key="index"
         >
           <div class="image-item-box">
             <div class="image-item-cover">
               <a href="#">
-                <img class="playlist-pic" src="#" alt="playlist cover">
+                <img 
+                class="playlist-pic" 
+                v-bind:src="item.imageUrl" 
+                alt="playlist cover">
               </a>
             </div>
             <h4 class="image-title">
-              <span class="image-title-txt"><a href="">???</a></span>
+              <span class="image-title-txt"><a href="">{{ item.title }}</a></span>
             </h4>
-            <div class="image-other">播放量：888万</div>
+            <div class="image-other">播放量：{{ item.playCount}}</div>
           </div>
         </li>
       </ul>
@@ -49,15 +83,15 @@ export default{
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: "PingFang SC";
     }
     .the-body{
-      max-width: 1200px;
       margin: 0 auto;
       padding: 20px 15px;
       background-color: #f5f5f5;
     }
-    .body-name{
-      font-size: 18px;
+    .the-title{
+      font-size: 24px;
       color: #333;
       margin-bottom: 10px;
       text-align: center;
@@ -68,14 +102,14 @@ export default{
       gap: 10px;
       list-style: none;
       margin-bottom: 25px;
-      padding: 0 10px;
+      padding: 20px 20px 10px 10px;
       flex-wrap: wrap;
       justify-content: center;
     }
     .body-links a{
       text-decoration: none;
       color: #333;
-      font-size: 10px;
+      font-size: 16px;
       white-space: nowrap;
       padding: 6px 18px;
       transition: all 0.3s;
@@ -83,6 +117,10 @@ export default{
     .body-links a:hover{
       color:#2dd584;
       border-color: #2dd584;
+    }
+    .the-images{
+      max-width: 1200px;
+      margin: 0 auto;
     }
     .image-links{
       display: grid;
@@ -94,11 +132,11 @@ export default{
     }
     .image-item-box{
       background: white;
-      border-radius: px;
+      border-radius:12px;
       overflow: hidden;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       transition: transform 0.3s;
-      aspect-ratio: 1/1.35;
+      aspect-ratio: 1/1.1;
     }
     .image-item-box:hover{
       transform:translateY(-5px);
@@ -123,12 +161,13 @@ export default{
     .image-title-txt a{
       color: #333;
       text-decoration: none;
-      font-size: 13px;
+      font-size: 14px;
       overflow: hidden;
       font-weight: 500;
     }
     .image-other{
-      padding: 0 10px 8px;
-      font-size: 11px;
+      padding: 5px 10px 0px 10px;
+      font-size: 12px;
+      color: #666;
     }
 </style>

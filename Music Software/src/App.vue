@@ -1,13 +1,14 @@
 <script>
 import SubNav from './components/HomePage/SubNav.vue';
 import TheHeader from './components/HomePage/TheHeader.vue';
-import TheBody from './components/HomePage/TheBody.vue';
-
+import MusicCharts from './components/HomePage/MusicCharts.vue';
+import TheRecommendations from './components/HomePage/TheRecommendations.vue';
 export default{
   components:{
     TheHeader,
     SubNav,
-    TheBody
+    TheRecommendations,
+    MusicCharts
   }
 }
 </script>
@@ -16,7 +17,10 @@ export default{
   <div class="page-transition">
     <TheHeader />
     <SubNav />
-    <TheBody />
+    <main class="main-content">
+    <TheRecommendations />
+    <MusicCharts />
+    </main>
   </div>
 </template>
 

@@ -43,8 +43,9 @@ export default{
 
 .sub-nav-links li{
   position: relative;
-  padding: 10px 20px;
-  font-size: 10px;
+  padding: 10px 40px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .sub-nav-links a{

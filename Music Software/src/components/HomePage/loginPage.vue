@@ -1,17 +1,8 @@
 <script>
-import { handleError } from 'vue';
-
-export default{
-  name:"loginPage",
-  methods:{
-    handleLogin(){
-      localStorage.setItem('musicLoggedIn', 'true')
-      this.$router.push('/')
-
-      window.dispatchEvent(new Event("storage"))
-    }
-  }
+export default {
+  name:"LoginPage"
 }
+
 </script>
 
 <template>

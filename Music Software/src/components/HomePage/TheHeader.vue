@@ -1,33 +1,8 @@
 <script>
 export default {
-  name:"TheHeader",
-  data(){
-    return {
-      isLoggedIn: false,
-    }
-  },
-  computed:{
-    loginText(){
-      return this.isLoggedIn ? "已登录" : "登录"
-    }
-  },
-  mounted(){
-    this.checkLoginStatus()
-  },
-  methods:{
-    checkLoginStatus() {
-      this.isLoggedIn = !!localStorage.getItem('musicLoggedIn')
-    },
-    handleLogin() {
-      if (!this.isLoggedIn) {
-        document.body.classList.add("page-hidden");
-        setTimeout(() => {
-          this.$router.push('/login'); // 使用 Vue Router
-        }, 300);
-      }
-    }
-  }
+  name:"TheHeader"
 }
+
 
 </script>
 
@@ -37,7 +12,7 @@ export default {
     <div class="top-left">
       <h1 class="logo">IsleWave 音乐</h1>
       <ul class="nav-links">
-        <li class="top-one"><a href="#">音乐馆</a></li>
+        <li class="top-one"><a href="#" id="music-house">音乐馆</a></li>
         <li><a href="#">我的音乐</a></li>
         <li><a href="#">客户端</a></li>
         <li><a href="#">商城</a></li>
@@ -49,9 +24,8 @@ export default {
         <input type="search" placeholder="搜索音乐、MV、歌单、用户">
         <button class="search-button">Q</button>
       </div>
-      <a href="#" :class="['login', { 'no-click': isLoggedIn }]"
-      @click.prevent="handleLogin">{{ loginText}}</a>
-      <span class="open-vip">开通VIP</span>
+      <a href="#" class="login">登录</a>
+      <span class="open-vip" href="#">开通VIP</span>
       <button class="recharge">充值</button>
     </div>
     </div>
@@ -97,7 +71,7 @@ export default {
 
 .logo{
   color:#2dd584;
-  font-size: 20px;
+  font-size: 28px;
   margin: 0;
   line-height: 1;
 }
@@ -115,7 +89,7 @@ export default {
 .nav-links a{
   color: #333;
   text-decoration: none;
-  font-size:12px;
+  font-size:18px;
   padding: 8px 0;
   position: relative;
   transition: color 0.2s;
@@ -140,9 +114,9 @@ export default {
   border: none;
   background: transparent;
   outline: none;
-  padding: 0px;
-  width: 100px;
-  font-size: 10px;
+  padding: 5px;
+  width: 120px;
+  font-size: 15px;
 }
 
 .search-button{
@@ -164,10 +138,10 @@ export default {
   padding: 4px 10px;
   cursor: pointer;
   border-left: 10px;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .open-vip{
-  font-size: 12px;
+  font-size: 16px;
 }
 </style>
