@@ -1,6 +1,16 @@
 <script>
+import LoginPage from './LoginPage.vue';
+
 export default {
-  name:"TheHeader"
+  name:"TheHeader",
+  components:{
+    LoginPage
+  },
+  methods:{
+    loginPage(){
+
+    }
+  }
 }
 
 
@@ -24,7 +34,7 @@ export default {
         <input type="search" placeholder="搜索音乐、MV、歌单、用户">
         <button class="search-button">Q</button>
       </div>
-      <a href="#" class="login">登录</a>
+      <button class="login" v-on:click="$emit('login-click')">登录</button>
       <span class="open-vip" href="#">开通VIP</span>
       <button class="recharge">充值</button>
     </div>

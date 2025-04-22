@@ -7,6 +7,9 @@ export default {
 
 <template>
   <nav class="login-box">
+    <div class="back-home">
+      <button v-on:click="$emit('back')">← 返回首页</button>
+    </div>
     <div class="login-box-hd">
       <h2 class="login-box-select">
         <a class="qq-login">QQ登录</a>
@@ -35,7 +38,14 @@ export default {
       box-sizing: border-box;
       font-family: "Microsoft Yahei", sans-serif;
     }
-
+    .back-home{
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: #31c27c;
+      text-decoration: none;
+      font-size: 14px;
+    }
     body{
       background: #f5f5f5;
       display: flex;
