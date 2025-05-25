@@ -1,7 +1,4 @@
-<script>
-export default{
-  name:"MusicCharts"
-}
+<script setup>
 </script>
 
 

@@ -1,9 +1,3 @@
-<script>
-export default{
-  name: "SubNav"
-}
-</script>
-
 <template>
   <nav class="sub-nav">
     <div class="nav-container">

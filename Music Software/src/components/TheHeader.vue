@@ -1,19 +1,10 @@
-<script>
-import LoginPage from './LoginPage.vue';
+<script setup>
+import { useRouter } from 'vue-router';
 
-export default {
-  name:"TheHeader",
-  components:{
-    LoginPage
-  },
-  methods:{
-    loginPage(){
-
-    }
-  }
+const router = useRouter();
+const ToLogin = () =>{
+  router.push({ name: 'Login' })
 }
-
-
 </script>
 
 <template>
@@ -34,7 +25,7 @@ export default {
         <input type="search" placeholder="搜索音乐、MV、歌单、用户">
         <button class="search-button">Q</button>
       </div>
-      <button class="login" v-on:click="$emit('login-click')">登录</button>
+      <button class="login" v-on:click="ToLogin">登录</button>
       <span class="open-vip" href="#">开通VIP</span>
       <button class="recharge">充值</button>
     </div>
