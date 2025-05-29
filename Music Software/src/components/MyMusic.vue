@@ -1,38 +1,62 @@
+<script setup>
+import { ref } from 'vue';
+
+</script>
+
 <template>
-  <div id="UserPage">
-    <div class="user-picture">
-      <img src=".@/assets/images/pic9.jpg">
-      <p class="user-name">Kevin</p>
+  <div class="container">
+    <div class="background-container">
+      <div class="background-overlay"></div>
+      <div class="user-picture">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="用户头像">
+        <h1 class="user-name">Kevin</h1>
+        <div class="user-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">关注</div>
+          </div>
+          <div class="user-stats">
+            <div class="stat-number">1</div>
+            <div class="stat-label">粉丝</div>
+          </div>
+        </div>
+      </div>
     </div>
+
     <div class="tabs">
       <ul class="tabs-links">
-        <li><a href="#">我喜欢</a></li>
-        <li><a href="#">我创建的歌单</a></li>
-        <li><a href="#">关注</a></li>
-        <li><a href="#">粉丝</a></li>
+        <li class="active">我喜欢</li>
+        <li>我的已购</li>
+        <li>我创建的歌单</li>
+        <li>关注</li>
+        <li>粉丝</li>
+        <li>我上传的视频</li>
       </ul>
     </div>
-    <div class="likes">
-      <ul class="likes-links">
-        <li><a href="#">歌曲</a></li>
-        <li><a href="#">歌单</a></li>
-        <li><a href="#">专辑</a></li>
-        <li><a href="#">视频</a></li>
-      </ul>
-    </div>
+
+    <div class="content-container">
+      <div class="likes">
+        <ul class="likes-links">
+          <li class="active">歌曲<span class="stats-badge">227</span></li>
+          <li>歌单<span class="stats-badge">1</span></li>
+          <li>专辑<span class="stats-badge">1</span></li>
+          <li>视频<span class="stats-badge">1</span></li>
+        </ul>
+      </div>
+    </div> 
+
     <div class="takes">
-      <div class="take-playAll">
-        <img src="#">
-        <button class="player">播放全部</button>
-      </div>
-      <div class="take-adding">
-        <img src="#">
-        <button class="adding">添加到</button>
-      </div>
-      <div class="take-downlode">
-        <img src="#">
-        <button class="doenlode">下载</button>
-      </div>
+      <button class="action-btn player">
+        <i class="fas fa-play"></i> 播放全部
+      </button>
+      <button class="action-btn adding">
+        <i class="fas fa-play"></i>添加到
+      </button>
+      <button class="action-btn download">
+        <i class="fas fa-download"></i>下载
+      </button>
+    </div>
+
     <table class="music-table">
       <thead>
         <tr>
@@ -44,143 +68,295 @@
       </thead>
       <tbody>
         <tr>
-          <td>成都</td>
-          <td>赵磊</td>
-          <td>成都</td>
-          <td>03:45</td>
+          <td>
+            <div class="song-info">
+              <div class="song-cover"></div>
+              <div class="song-details">
+                <div class="song-title">
+                  小宇
+                  <span class="badge">推荐</span>
+                </div>
+                <div class="song-artist">
+                  蓝心羽
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            小宇
+          </td>
+          <td class="album">xiao宇</td>
+          <td class="duration">02:12</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="song-info">
+              <div class="song-cover" style="background: linear-gradient(45deg, #2193b0, #6dd5ed);"></div>
+              <div class="song-details">
+                <div class="song-title">勇气
+                  <span class="badge">热播</span>
+                </div>
+                <div class="song-artist">面子</div>
+              </div>
+            </div>
+          </td>
+          <td>dsds</td>
+          <td class="album">w</td>
+          <td class="duration">03:33</td>
         </tr>
       </tbody>
     </table>
-    </div>
   </div>
 </template>
 <style scoped>
-<style>
-#UserPage {
-  max-width: 800px;
-  margin: 0 auto;
-  font-family: 'Microsoft YaHei', sans-serif;
-  color: #333;
+.container{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;
+  width: 100%;
+  max-width: 1200px;
+  background: rgba(20, 25, 40, 0.85);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
 }
-
-.user-picture {
+body{
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #f0f0f0;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;;
+}
+.background-container{
+  position: relative;
+  height: 280px;
+  background: url('https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
   text-align: center;
-  padding: 20px;
 }
-
-.user-picture img {
-  width: 80px;
-  height: 80px;
+.background-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 15, 30, 0.7);
+  z-index: 1;
+}
+.user-picture{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.user-picture img{
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
+  object-fit: cover;
+  border:4px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
-
-.user-name {
-  font-size: 18px;
-  margin: 10px 0;
+.user-name{
+  font-size: 28px;
+  margin: 15px 0;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
-
-.tabs-links {
+.user-stats{
   display: flex;
-  border-bottom: 1px solid #eee;
-  padding: 0 20px;
-}
-
-.tabs-links li {
-  padding: 12px 20px;
-  font-size: 15px;
-}
-
-.tabs-links li a {
-  color: #666;
-  text-decoration: none;
-}
-
-.tabs-links li:hover {
-  border-bottom: 2px solid #ff5500;
-}
-
-.likes-links {
-  display: flex;
-  padding: 10px 20px;
   gap: 25px;
+  margin-top: 10px;
 }
-
-.likes-links li a {
-  color: #999;
+.stat-item{
+  text-align: center;
+}
+.stat-number{
+  font-size: 22px;
+  font-weight: 700;
+}
+.stat-label{
   font-size: 14px;
+  color: #aaa;
 }
-
-.likes-links li a:hover {
+.tabs{
+  background: rgba(15, 20, 35, 0.9);
+  padding: 0 30px;
+}
+.tabs-links{
+  display: flex;
+  list-style: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.tabs-links li{
+  padding: 18px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.tabs-links li:hover{
+  color: #ff6b6b;
+}
+.tabs-links li:active{
   color: #ff5500;
+  border-bottom: 3px solid #ff5500;
 }
-
-.takes {
-  padding: 20px;
+.takes{
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
 }
-
-.take-playAll {
+.action-btn{
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.player {
-  background: #ff5500;
-  color: white;
-  border: none;
-  padding: 8px 25px;
-  border-radius: 20px;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 500;
   cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
 }
-
-.adding, .doenlode {
-  background: none;
-  border: 1px solid #ddd;
-  padding: 6px 15px;
-  border-radius: 15px;
-  margin: 0 10px;
+.player{
+  background: linear-gradient(135deg, #ff5500, #ff8c00);
+  color:white;
 }
-
+.player{
+  background: linear-gradient(135deg, #ff6b00, #ff9d00);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 85, 0, 0.4);
+}
+.adding, .download {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ddd;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.adding:hover, .download:hover {
+  background: rgba(255, 255, 255, 0.15);
+}   
 .music-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-}
-
+}   
 .music-table th {
-  color: #999;
-  font-weight: normal;
+  color: #aaa;
+  font-weight: 500;
   text-align: left;
-  padding: 12px 5px;
-  border-bottom: 1px solid #eee;
-}
-
-.music-table td {
-  padding: 12px 5px;
-  border-bottom: 1px solid #eee;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 14px;
+}   
+.music-table td {
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 15px;
+  transition: all 0.2s ease;
+}    
+.music-table tr:hover td {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ff9966;
+}  
+.song-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}  
+.song-cover {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: linear-gradient(45deg, #ff9966, #ff5e62);
+}   
+.song-details {
+  display: flex;
+  flex-direction: column;
 }
-
-/* 添加数据后的表格样式 */
-.music-table tr:hover {
-  background: #f8f8f8;
+    
+.song-title {
+  font-weight: 500;
+  margin-bottom: 3px;
 }
-
-/* 数值标签样式 */
-.tabs-links li::after {
-  content: "3";  /* 根据实际数据修改 */
-  color: #999;
+    
+.song-artist {
+  font-size: 13px;
+  color: #aaa;
+}
+    
+.duration {
+  color: #aaa;
+}
+    
+.album {
+  color: #ccc;
+}
+    
+.badge {
+  background: rgba(255, 85, 0, 0.2);
+  color: #ff9966;
+  padding: 2px 8px;
+  border-radius: 10px;
   font-size: 12px;
-  margin-left: 5px;
-  vertical-align: super;
+  margin-left: 10px;
 }
-
-/* 歌单数量标记 */
-.likes-links li:first-child::after {
-  content: "| 17";
-  color: #999;
-  margin-left: 5px;
+    
+.stats-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  color: #aaa;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  margin-left: 8px;
 }
-</style>
+    
+.footer {
+  text-align: center;
+  padding: 25px;
+  color: #666;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 20px;
+}
+    
+.highlight {
+  color: #ff9966;
+}
+    
+@media (max-width: 768px) {
+  .background-container {
+    height: 240px;
+  }
+      
+  .tabs-links {
+    overflow-x: auto;
+  }
+      
+  .likes-links {
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+      
+  .takes {
+    justify-content: center;
+  }
+      
+  .music-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
 </style>

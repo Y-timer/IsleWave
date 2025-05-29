@@ -40,7 +40,7 @@ function validateName(){
 function validatePassword(){
   passwordError.value = ''
   if(!password.value){
-    password.value = '请输入密码'
+    passwordError.value = '请输入密码'
     return false
   }
   if(!passwordRule.test(password.value)){
@@ -77,8 +77,8 @@ function validateCaptcha(){
 }
 //手机号输入
 function handlePhoneInput(){
-  showCaptchaGroup.value = phoneNum.value.length > 0 && validatePhone();
-  validatePhone();
+  const isValid = validatePhone();
+  showCaptchaGroup.value = phoneNum.value.length > 0 && isValid;
 }
 //验证码倒计时
 function startCountdown(){
@@ -192,7 +192,6 @@ onUnmounted(() => {
 
       <div 
       class="captcha-group" 
-      id="inputCaptcha"
       v-show="showCaptchaGroup">
         <input 
         type="number" 
@@ -226,12 +225,6 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
- * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Microsoft Yahei", sans-serif;
-    }
     body {
       background: #b4a9ed;
       display: flex;
@@ -241,12 +234,18 @@ onUnmounted(() => {
       padding: 20px;
     }
     .sign-up-box {
+      margin: 0 auto;
+      margin-top: 200px;
+      font-family: "Microsoft Yahei", sans-serif;
       width: 100%;
+      height: 100%;
       max-width: 400px;
       background: white;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       padding: 30px;
+      box-sizing: border-box;
+      font-family: "Microsoft Yahei", sans-serif;
     }
     .the-welcome {
       color: #333;
@@ -295,13 +294,8 @@ onUnmounted(() => {
       flex: 1;
       padding: 12px;
     }
-    #inputCaptcha {
-      display: none;
-      gap: 10px;
-      margin-top: 10px;
-    }
     .captcha-group {
-      display: flex;
+      display: flex !important;
       gap: 10px;
       margin-top: 10px;
     }
@@ -332,7 +326,6 @@ onUnmounted(() => {
       color: #ff4d4f;
       font-size: 12px;
       margin: 0 0 0px;
-      display: none;
       height: 18px;
     }
     input.error {

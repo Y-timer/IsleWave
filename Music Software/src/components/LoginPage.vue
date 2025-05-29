@@ -58,13 +58,18 @@ const router = useRouter();
 const ToSignUp = () =>{
   router.push({ name: 'Signup' })
 };
+const GoBack = () =>{
+  router.go(-1)
+}
 
 </script>
 
 <template>
   <div class="login-box">
     <div class="back-home">
-      <button v-on:click="$emit('back')">← 返回首页</button>
+      <button 
+      id="back-home-btn"
+      v-on:click="GoBack">← 返回首页</button>
     </div>
     <div class="login-box-hd">
       <h2 class="login-box-select">
@@ -102,8 +107,8 @@ const ToSignUp = () =>{
       v-bind:disabled="isSubmit"
       v-bind:class="{loading:isSubmit}">{{ isSubmit ? "登录中..." : "登录" }}</button>
       <div class="links">
-        <button class="fond-password">找回密码</button>
-        <button class="signup-account" v-on:click="ToSignUp">注册账号</button> 
+        <button id="fond-password">找回密码</button>
+        <button id="signup-account" v-on:click="ToSignUp">注册账号</button> 
       </div>
     </div>
   </div>
@@ -113,35 +118,31 @@ const ToSignUp = () =>{
  *{
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: "Microsoft Yahei", sans-serif;
+      box-sizing: border-box;    
     }
-    .back-home{
+
+    #back-home-btn{
+      width: 100px;
+      height: 50px;
+      border-radius: 15px;
       position: absolute;
       top: 20px;
       left: 20px;
-      color: #31c27c;
-      text-decoration: none;
-      font-size: 14px;
+      font-size: 15px;
     }
 
     .back-home:hover{
       text-decoration: underline;
     }
-
-    body{
-      background: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      padding-top: 100px;
-    }
-
     .login-box{
-      width: 370px;
+      max-width: 400px;
+      margin: 0 auto;
+      margin-top: 200px;
       background: white;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       padding: 25px;
+      font-family: "Microsoft Yahei", sans-serif;
     }
 
     .login-box-hd{
@@ -259,5 +260,9 @@ const ToSignUp = () =>{
       }
       @keyframes spin {
       to { transform: rotate(360deg); }
+    }
+    #foud-password{
+      width: 20px;
+      height: 30px;
     }
 </style>

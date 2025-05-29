@@ -4,7 +4,10 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 const ToLogin = () =>{
   router.push({ name: 'Login' })
-}
+};
+const ToMyMusic = () => {
+  router.push({name: 'MyMusic'})
+};
 </script>
 
 <template>
@@ -13,11 +16,11 @@ const ToLogin = () =>{
     <div class="top-left">
       <h1 class="logo">IsleWave 音乐</h1>
       <ul class="nav-links">
-        <li class="top-one"><a href="#" id="music-house">音乐馆</a></li>
-        <li><a href="#">我的音乐</a></li>
+        <li id="top-one"><a href="#" id="music-house">音乐馆</a></li>
+        <li id="my-music"><a v-on:click="ToMyMusic">我的音乐</a></li>
         <li><a href="#">客户端</a></li>
-        <li><a href="#">商城</a></li>
-        <li><a href="#" class="VIP">VIP</a></li>
+        <li id="the-shopping"><a href="#">商城</a></li>
+        <li id="the-vip"><a href="#" class="VIP">VIP</a></li>
       </ul>
     </div>
     <div class="top-right">

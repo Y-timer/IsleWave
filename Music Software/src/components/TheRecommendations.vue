@@ -1,38 +1,33 @@
-<script>
-export default{
-  name:"TheRecommendations",
-  data(){
-    return {
-      playlists:[
-        {
-          imageUrl:"/pic1.jpg",
-          title:"你的能量助力曲",
-          playCount:"888万"
-        },
-        {
-          imageUrl:"/pic2.jpg",
-          title:"经典怀旧金曲",
-          playCount:"2452万"
-        },
-        {
-          imageUrl:"/pic3.jpg",
-          title:"轻音乐",
-          playCount:"121万"
-        },
-        {
-          imageUrl:"/pic4.jpg",
-          title:"深夜助眠钢琴曲",
-          playCount:"672万"
-        },
-        {
-          imageUrl:"/pic7.jpg",
-          title:"写作业必听",
-          playCount:"8886万"
-        },
-      ]
-    }
+<script setup>
+import { ref } from 'vue';
+
+const playlists = ref([
+  {
+    imageUrl:"/pic1.jpg",
+    title:"你的能量助力曲",
+    playCount:"888万"
+  },
+  {
+    imageUrl:"/pic2.jpg",
+    title:"经典怀旧金曲",
+    playCount:"2452万"
+  },
+  {
+    imageUrl:"/pic3.jpg",
+    title:"轻音乐",
+    layCount:"121万"
+  },
+  {
+    imageUrl:"/pic4.jpg",
+    title:"深夜助眠钢琴曲",
+    playCount:"672万"
+  },
+  {
+    imageUrl:"/pic7.jpg",
+    title:"写作业必听",
+    playCount:"8886万"
   }
-}
+])
 </script>
 
 <template>
