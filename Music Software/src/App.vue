@@ -1,0 +1,11 @@
+<script setup>
+</script>
+
+<template>
+  <div class="page-transition">
+    <router-view />
+  </div>
+</template>
+
+<style scoped>
+</style>
