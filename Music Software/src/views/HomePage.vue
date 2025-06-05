@@ -1,5 +1,5 @@
 <script setup>
-import TheHeader from '@/components/TheHeader.vue';
+import TheHeader from '@/components/TopNav.vue';
 import SubNav from '@/components/SubNav.vue';
 import TheRecommendations from '@/components/TheRecommendations.vue';
 import MusicCharts from '@/components/MusicCharts.vue';

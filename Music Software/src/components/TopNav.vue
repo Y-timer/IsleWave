@@ -60,7 +60,9 @@ const ToMyMusic = () => {
 .nav-links a:hover{
   color: #2dd584;
 }
-
+#my-music{
+  cursor: pointer;
+}
 .top-left{
   display: flex;
   align-items: center;
