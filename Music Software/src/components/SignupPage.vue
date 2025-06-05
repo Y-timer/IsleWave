@@ -1,5 +1,11 @@
 <script setup>
-import { ref, computed, onUnmounted } from 'vue';
+import { ref, onUnmounted } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const ToLogin = () =>{
+  router.push({ name: 'Login' })
+};
 
 const name = ref('');
 const password = ref('');
@@ -130,7 +136,10 @@ const handleSubmit = async () =>{
   try{
     isSubmitting.value = true;
     await new Promise(resolve => setTimeout(resolve,2000));
-    alert('注册成功')
+    alert('注册成功');
+    setTimeout(()=>{
+      ToLogin();  
+    },500)
   } catch(error){
     alert('注册失败，请稍后再试')
   } finally{
@@ -265,7 +274,8 @@ onUnmounted(() => {
       gap: 15px;
     }
     input {
-      width: 100%;
+
+      width: 305px;
       padding: 12px 16px;
       border: 1px solid #ddd;
       border-radius: 6px;
