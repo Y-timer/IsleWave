@@ -1,9 +1,16 @@
 <script setup>
 import { useRouter } from 'vue-router';
+import { ref } from 'vue';
 
 const router = useRouter();
+const isLoggingIn = ref(false);
+
 const ToLogin = () =>{
-  router.push({ name: 'Login' })
+  isLoggingIn.value = true;
+  setTimeout(()=>{
+    router.push({ name: 'Login' });
+    isLoggingIn.value = false;
+  },300); 
 };
 const ToMyMusic = () => {
   router.push({name: 'MyMusic'})
@@ -28,7 +35,10 @@ const ToMyMusic = () => {
         <input type="search" placeholder="搜索音乐、MV、歌单、用户">
         <button class="search-button">Q</button>
       </div>
-      <button class="login" v-on:click="ToLogin">登录</button>
+      <button 
+        class="the-login" 
+        v-on:click="ToLogin"
+        v-bind:class="{'login-clicked':isLoggingIn}">登录</button>
       <span class="open-vip" href="#">开通VIP</span>
       <button class="recharge">充值</button>
     </div>
@@ -137,7 +147,7 @@ const ToMyMusic = () => {
   font-weight: bold;
 }
 
-.login,.recharge{
+.the-login,.recharge{
   background: #f8f8f8;
   border:1px solid #ddd;
   border-radius:5px;
@@ -146,8 +156,20 @@ const ToMyMusic = () => {
   border-left: 10px;
   font-size: 16px;
 }
-
+.the-login{
+  background-color: #2dd584;
+  color: white;
+  transition: all 0.3s ease;
+}
+.the-login:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.login-clicked{
+  animation: buttonClick 0.3s ease;
+}
 .open-vip{
   font-size: 16px;
+  cursor: pointer;
 }
 </style>

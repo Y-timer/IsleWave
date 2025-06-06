@@ -9,21 +9,31 @@ const routes = [
     path: '/',
     name:'HomePage',
     component:HomePage,
+    meta:{transition:'fade'}
   },
   {
     path: '/login',
     name: 'Login',
     component:LoginPage,
+    meta:{
+      transition:'slide',
+      loginOrSignup: true
+    }
   },
   {
     path: '/signup',
     name: 'Signup',
-    component:TheSignup
+    component:TheSignup,
+    meta:{
+      transition:'slide',
+      loginOrSignup: true
+    }
   },
   {
     path: '/mymusic',
     name: 'MyMusic',
-    component:MyMusic
+    component:MyMusic,
+    meta:{transition:'fade'}
   }  
 ]
 

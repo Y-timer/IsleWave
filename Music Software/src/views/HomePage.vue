@@ -1,5 +1,5 @@
 <script setup>
-import TheHeader from '@/components/TopNav.vue';
+import TopNav from '@/components/TopNav.vue';
 import SubNav from '@/components/SubNav.vue';
 import TheRecommendations from '@/components/TheRecommendations.vue';
 import MusicCharts from '@/components/MusicCharts.vue';
@@ -8,7 +8,7 @@ import MusicCharts from '@/components/MusicCharts.vue';
 
 <template>
   <div>
-    <TheHeader />
+    <TopNav />
     <SubNav />
     <main>
       <TheRecommendations />

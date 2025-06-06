@@ -75,94 +75,94 @@ const playlists = ref([
 
 <style scoped>
 *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "PingFang SC";
-    }
-    .the-body{
-      margin: 0 auto;
-      padding: 20px 15px;
-      background-color: #f5f5f5;
-    }
-    .the-title{
-      font-size: 24px;
-      color: #333;
-      margin-bottom: 10px;
-      text-align: center;
-      font-weight: 600;
-    }
-    .body-links{
-      display: flex;
-      gap: 10px;
-      list-style: none;
-      margin-bottom: 25px;
-      padding: 20px 20px 10px 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .body-links a{
-      text-decoration: none;
-      color: #333;
-      font-size: 16px;
-      white-space: nowrap;
-      padding: 6px 18px;
-      transition: all 0.3s;
-    }
-    .body-links a:hover{
-      color:#2dd584;
-      border-color: #2dd584;
-    }
-    .the-images{
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .image-links{
-      display: grid;
-      grid-template-columns: repeat(5,1fr);
-      gap: 15px;
-      list-style: none;
-      padding: 0 10px;
-      justify-content: center;
-    }
-    .image-item-box{
-      background: white;
-      border-radius:12px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      transition: transform 0.3s;
-      aspect-ratio: 1/1.1;
-    }
-    .image-item-box:hover{
-      transform:translateY(-5px);
-    }
-    .image-item-cover{
-      position: relative;
-      padding-top: 74%;
-      background-color: #eee;
-    }
-    .playlist-pic{
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit:cover;
-    }
-    .image-title{
-      padding: 12px;
-      line-height: 1.3;
-    }
-    .image-title-txt a{
-      color: #333;
-      text-decoration: none;
-      font-size: 14px;
-      overflow: hidden;
-      font-weight: 500;
-    }
-    .image-other{
-      padding: 5px 10px 0px 10px;
-      font-size: 12px;
-      color: #666;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "PingFang SC";
+}
+.the-body{
+  margin: 0 auto;
+  padding: 20px 15px;
+  background-color: #f5f5f5;
+}
+.the-title{
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+.body-links{
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  margin-bottom: 25px;
+  padding: 20px 20px 10px 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.body-links a{
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  white-space: nowrap;
+  padding: 6px 18px;
+  transition: all 0.3s;
+}
+.body-links a:hover{
+  color:#2dd584;
+  border-color: #2dd584;
+}
+.the-images{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.image-links{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 15px;
+  list-style: none;
+  padding: 0 10px;
+  justify-content: center;
+}
+.image-item-box{
+  background: white;
+  border-radius:12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+  aspect-ratio: 1/1.1;
+}
+.image-item-box:hover{
+  transform:translateY(-5px);
+}
+.image-item-cover{
+  position: relative;
+  padding-top: 74%;
+  background-color: #eee;
+}
+.playlist-pic{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+}
+.image-title{
+  padding: 12px;
+  line-height: 1.3;
+}
+.image-title-txt a{
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  overflow: hidden;
+  font-weight: 500;
+}
+.image-other{
+  padding: 5px 10px 0px 10px;
+  font-size: 12px;
+  color: #666;
+}
 </style>

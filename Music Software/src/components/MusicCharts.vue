@@ -106,91 +106,91 @@
 </template>
 
 <style scoped>
-   *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
-    .the-title {
-      width: 100%;
-      padding: 20px 0 10px;
-      background: #ffffff;
-      position: sticky;
-      top: 0;
-      z-index: 2;
-    }
-    .TheCharts{
-      font-size: 24px;
-      color: #333;
-      margin-bottom: 10px;
-      text-align: center;
-      font-weight: 600;
-    }
-    .top-title-container {
-      display: flex;
-      gap: 20px;
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .the-charts{
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      padding: 0 20px 20px;
-      background: #ffffff;
-    }
-    .chart-card{
-      flex:1;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .hot-music-top, 
-    .new-music-top, 
-    .rising-music-top {
-      padding: 16px 20px;
-      font-size: 18px;
-      font-weight: 600;
-      color: #333;
-      border-bottom: 1px solid #eee;
-    }
-    .hot-music-list ul,
-    .new-music-list ul, 
-    .rising-music-list ul {
-      list-style: none;
-      padding: 10px 0;
-    }
-    .the-list{
-      display: flex;
-      align-items: center;
-      padding: 12px 20px;
-      border-bottom: 1px solid #eee;
-    }
-    .the-list:last-child{
-      border-bottom: none;
-    }
-    .the-num{
-      width: 24px;
-      height: 24px;
-      line-height: 24px;
-      text-align: center;
-      border-radius: 4px;
-      background: #f0f0f0;
-      color: #666;
-      margin-right: 15px;
-      font-size: 14px;
-    }
-    .the-list:nth-child(1) .the-num {
-      background: #fe3a3a;
-      color: white;
-    }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+.the-title {
+  width: 100%;
+  padding: 20px 0 10px;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.TheCharts{
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+.top-title-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.the-charts{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 20px 20px;
+  background: #ffffff;
+}
+.chart-card{
+  flex:1;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.hot-music-top, 
+.new-music-top, 
+.rising-music-top {
+  padding: 16px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+.hot-music-list ul,
+.new-music-list ul, 
+.rising-music-list ul {
+  list-style: none;
+  padding: 10px 0;
+}
+.the-list{
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+}
+.the-list:last-child{
+  border-bottom: none;
+}
+.the-num{
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 4px;
+  background: #f0f0f0;
+  color: #666;
+  margin-right: 15px;
+  font-size: 14px;
+}
+.the-list:nth-child(1) .the-num {
+  background: #fe3a3a;
+  color: white;
+}
 
-    .the-list:nth-child(2) .the-num {
-      background: #ff6b6b;
-      color: white;
-    }
+.the-list:nth-child(2) .the-num {
+  background: #ff6b6b;
+  color: white;
+}
 
     .the-list:nth-child(3) .the-num {
       background: #ff9f9f;

@@ -259,7 +259,7 @@ body{
 .background-container{
   position: relative;
   height: 280px;
-  background: url('https://img2.baidu.com/it/u=1908757599,1211789196&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=500') center/cover no-repeat;
+  background: url('/pic18.jpg') center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
